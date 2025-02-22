@@ -17,27 +17,23 @@ pnpm install
 ```sh
 sbt
 [...]
-sbt:livechart> ~fastLinkJS
-```
-
-```sh
-pnpm build --watch
+sbt> ~fastLinkJS
 ```
 
 ## build
 
 ```sh
-sbt
-[...]
-sbt:livechart> fastLinkJS
-```
-
-```sh
-pnpm build
+sbt fastLinkJS && pnpm build
 ```
 
 ## serve
 
 ```sh
 docker run --rm --name local-server -p 3000:80 -v ./dist:/usr/share/nginx/html nginx
+```
+
+## lint
+
+```sh
+sbt scalafix
 ```
