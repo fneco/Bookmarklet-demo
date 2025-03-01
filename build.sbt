@@ -1,7 +1,7 @@
 import org.scalajs.linker.interface.ModuleKind
 import org.scalajs.linker.interface.ModuleSplitStyle
 
-lazy val hello = project
+lazy val scalajs = project
   .in(file("."))
   .enablePlugins(ScalaJSPlugin) // Enable the Scala.js plugin in this project
   .settings(
@@ -13,17 +13,8 @@ lazy val hello = project
       else
         "-Wunused:imports"
     },
-
-    /* Configure Scala.js to emit modules in the optimal way to
-     * connect to Vite's incremental reload.
-     * - emit ECMAScript modules
-     * - emit as many small modules as possible for classes in the "hello" package
-     * - emit as few (large) modules as possible for all other classes
-     *   (in particular, for the standard library)
-     */
     scalaJSLinkerConfig ~= {
       _.withModuleKind(ModuleKind.ESModule)
-        .withModuleSplitStyle(ModuleSplitStyle.SmallModulesFor(List("hello")))
     },
 
     /* Depend on the scalajs-dom library.

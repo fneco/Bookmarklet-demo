@@ -9,8 +9,8 @@ import scala.scalajs.js.timers.setTimeout
 import scala.util.Random
 
 @JSExportTopLevel("hello")
-def hello(): Unit =
-  (1 to 5)
+def hello(count: Int): Unit =
+  (1 to count)
     .map(_ => sayHello(Random.between(1000, 8000)))
     .foreach(_.foreach(result => println(s"completed $result")))
 
