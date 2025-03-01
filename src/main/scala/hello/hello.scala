@@ -4,9 +4,11 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 import scala.concurrent.Promise
 import scala.scalajs.js
+import scala.scalajs.js.annotation.*
 import scala.scalajs.js.timers.setTimeout
 import scala.util.Random
-@main
+
+@JSExportTopLevel("hello")
 def hello(): Unit =
   (1 to 5)
     .map(_ => sayHello(Random.between(1000, 8000)))

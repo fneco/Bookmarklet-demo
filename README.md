@@ -20,6 +20,10 @@ sbt
 sbt> ~fastLinkJS
 ```
 
+```sh
+pnpm build --watch
+```
+
 ## build
 
 ```sh
