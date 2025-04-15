@@ -1,0 +1,21 @@
+{
+  "name": "bookmarklet",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsc && vite build --watch",
+    "build": "tsc && vite build",
+    "copy": "pnpx tsx ./script/copyBookmarklet.ts",
+    "build:copy": "pnpm build && pnpm copy",
+    "demo": "pnpx tsx ./demo/demo.ts"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^22.14.1",
+    "clipboardy": "^4.0.0",
+    "jsdom": "^26.1.0",
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0"
+  }
+}
